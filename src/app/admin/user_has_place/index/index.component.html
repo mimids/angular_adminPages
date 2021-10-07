@@ -1,0 +1,29 @@
+<h1>Liste des user has place</h1>
+
+
+    <!-- <label class="search-label" for="search">Search:</label>
+    <input
+      nbInput
+      [nbFilterInput]="dataSource"
+      id="search"
+      class="search-input"
+    /> -->
+<button routerLink="./add">  Ajouter </button>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <td scope="col">user_id</td>
+          <td scope="col">place_id</td>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of datas">
+          <td scope="row">{{ data.user_id }}</td>
+          <td>{{ data.place_id }}</td>
+
+        </tr>
+      </tbody>
+    </table>
+

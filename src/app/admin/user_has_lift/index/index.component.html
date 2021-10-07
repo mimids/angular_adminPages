@@ -1,0 +1,35 @@
+<h1>Liste des user has lift</h1>
+
+
+    <!-- <label class="search-label" for="search">Search:</label>
+    <input
+      nbInput
+      [nbFilterInput]="dataSource"
+      id="search"
+      class="search-input"
+    /> -->
+<button routerLink="./add">  Ajouter </button>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <td scope="col">driver</td>
+          <td scope="col">user ID</td>
+          <td scope="col">lift ID</td>
+ 
+          <td scope="col">Éditer</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of datas">
+          <td scope="row">{{ data.driver }}</td>
+          <td>{{ data.user_id }}</td>
+          <td>{{ data.lift_id }}</td>
+ 
+            <td>
+            <a class="edit" title="edit" routerLink="./edit/{{data.id}}"> <button nbButton status="info">Éditer</button></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+

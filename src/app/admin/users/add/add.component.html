@@ -1,0 +1,62 @@
+<h1 id="title" class="title">Ajouter un utilisateur</h1>
+<nb-card>
+  <nb-card-body>
+    <button nbButton hero (click)="goBack()">Retour</button>
+  </nb-card-body>
+</nb-card>
+<nb-card size="geant">
+  <nb-card-body>
+    <form>
+      <div class="form-control-group">
+        <label class="label">Prénom :</label>
+        <input name="firstname" #firstname placeholder="Prénom" />
+      </div>
+
+      <div class="form-control-group">
+        <label class="label">Nom :</label>
+        <input name="lastname" #lastname placeholder="nom" />
+      </div>
+
+      <div class="form-control-group">
+        <label class="label">adresse :</label>
+        <input name="address" #address placeholder="Adresse" />
+      </div>
+      <div class="form-control-group">
+        <label class="label">Password :</label>
+        <input name="password" #password type="password" />
+      </div>
+      <div>
+        <label class="label" for="birthday">Date de naissance</label>
+        <input #birthday name="birthday" placeholder="date de naissance" [nbDatepicker]="formpicker" />
+        <nb-datepicker #formpicker></nb-datepicker>
+      </div>
+
+      <div class="form-control-group">
+        <label class="label">Téléphone</label>
+        <input name="phone" #phone placeholder="téléphone" />
+      </div>
+
+      <div class="form-control-group">
+        <label class="label">Email</label>
+        <input name="email" #email placeholder="email" />
+      </div>
+
+      <div class="form-control-group">
+        <label class="label">Formation</label>
+        <select #training_id placeholder="Formation">
+          <option *ngFor="let training of trainings" value="{{training.id}}">{{training.name}}</option>
+        </select>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>
+<nb-card>
+  <nb-card-body>
+    <button nbButton hero status="success" (click)="
+          add(firstname.value, lastname.value, address.value,password.value, birthday.value, phone.value, email.value, training_id.value)
+        ">
+      Valider
+    </button>
+
+  </nb-card-body>
+</nb-card>
